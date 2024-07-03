@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/main.min.css' rel='stylesheet' />
+</head>
+<body>
+    <header>
+        <div class="logo">Logo</div>
+        <div class="header-icons">
+            <div class="notifications">🔔</div>
+            <div class="user-menu">
+                <span>⚙️</span>
+                <div class="dropdown-menu">
+                    <a href="#">Cerrar sesión</a>
+                    <a href="#">Configuración</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <nav class="sidebar">
+            <button class="btn-sidebar" id="btn1">Página 1</button>
+            <button class="btn-sidebar" id="btn2">Página 2</button>
+            <button class="btn-sidebar" id="btn3">Página 3</button>
+        </nav>
+        <main class="main-content">
+            <div class="buttons">
+                <button class="main-btn" id="main-btn1">Botón 1</button>
+                <button class="main-btn" id="main-btn2">Botón 2</button>
+                <button class="main-btn" id="main-btn3">Botón 3</button>
+            </div>
+            <div class="content-wrapper">
+                <div class="todo-list">
+                    <h3>Lista de Tareas</h3>
+                    <form id="task-form">
+                        <input type="text" id="new-task" placeholder="Nueva tarea" required>
+                        <button type="submit">Agregar</button>
+                        <button type="button" id="delete-task">Eliminar</button>
+                    </form>
+                    <ul id="task-list">
+                        <!-- Aquí se agregarán dinámicamente las tareas -->
+                    </ul>
+                </div>
+                <div class="calendar">
+                    <h2>Calendario</h2>
+                    <div id='calendar'></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>tetrai Empresa - design 2024 - Neuquen - Argentina - <a href="http://www.lolostech.com">www.lolostech.com</a></p>
+    </footer>
+
+    <!-- Modal para agregar/editar eventos -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Agregar/Editar Evento</h2>
+            <form id="event-form">
+                <label for="event-title">Título:</label>
+                <input type="text" id="event-title" name="event-title" required>
+                <label for="event-start">Inicio:</label>
+                <input type="datetime-local" id="event-start" name="event-start" required>
+                <label for="event-end">Fin:</label>
+                <input type="datetime-local" id="event-end" name="event-end">
+                <button type="submit">Guardar</button>
+                <button type="button" id="delete-event">Eliminar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js'></script>
+    <script src="script.js"></script>
+</body>
+</html>
